@@ -9,8 +9,6 @@ export class SmsService {
   private twilioClient = new Twilio(this.accountSid, this.authToken);
 
   sendSms(to: string, body: string): void {
-    console.log('to', to);
-    console.log('body', body);
     this.twilioClient.messages
       .create({
         from: this.twilioNumber,
